@@ -5,7 +5,7 @@ import StaticElement from "./StaticElement";
 
 const Main = () => {
   return (
-    <Col xs={12} md={9} className=" offset-md-3 mainPage">
+    <Col xs={12} md={9} className=" offset-md-3 mainPage ">
       <Row>
         <Col xs={9} lg={11} className="mainLinks d-none d-md-flex">
           <Link>TRENDING</Link>

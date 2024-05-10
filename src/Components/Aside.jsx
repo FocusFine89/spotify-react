@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { Button, Col, Container, Nav } from "react-bootstrap";
+import { Button, Col, Container, Nav, Row } from "react-bootstrap";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Aside = () => {
   const [inputValue, setInputValue] = useState("");
+  const liked = useSelector((state) => state.likedSong.content);
   //   const songs = useSelector((state) => state.songList.content.data);
 
   //   useEffect(() => {
@@ -45,7 +47,10 @@ const Aside = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link className="nav-item nav-link d-flex align-items-center">
+                    <Link
+                      className="nav-item nav-link d-flex align-items-center"
+                      to="/Library"
+                    >
                       <i className="bi bi-book-fill"></i>&nbsp; Your Library
                     </Link>
                   </li>

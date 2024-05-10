@@ -6,6 +6,7 @@ import Aside from "./Components/Aside";
 import Player from "./Components/Player";
 import Main from "./Components/Home";
 import Artist from "./Components/Artist";
+import Library from "./Components/Library";
 function App() {
   return (
     <div className="App">
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/:artist" element={<Artist />} />
+          <Route path="/Library" element={<Library />} />
         </Routes>
       </BrowserRouter>
     </div>

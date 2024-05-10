@@ -34,9 +34,11 @@ const Player = () => {
             </Col>
           </Row>
         </Col>
-        <Col lg={1}>
-          <img src={song.album.cover_big} alt="" id="footer-img" />
-        </Col>
+        {song && (
+          <Col lg={1}>
+            <img src={song.album.cover_big} alt="" id="footer-img" />
+          </Col>
+        )}
       </Row>
     </Container>
   );
