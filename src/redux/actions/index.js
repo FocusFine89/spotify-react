@@ -1,6 +1,7 @@
 export const GET_MUSIC = "GET_MUSIC";
 export const SELECTED_SONG = "SELECTED_SONG";
 export const LIKE_SONG = "LIKE_SONG";
+export const REMOVE_SONG = "REMOVE_SONG";
 
 export const getMusicAction = (artistName) => {
   return async (dispatch) => {
@@ -25,3 +26,5 @@ export const likedSongAction = (likedsong) => ({
   type: LIKE_SONG,
   payload: likedsong,
 });
+
+export const removeSongAction = (i) => ({ type: REMOVE_SONG, payload: i });
