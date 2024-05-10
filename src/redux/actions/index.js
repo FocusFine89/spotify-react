@@ -10,7 +10,7 @@ export const getMusicAction = (artistName) => {
       );
       if (response.ok) {
         let songs = await response.json();
-        dispatch({ type: GET_MUSIC, payload: songs });
+        dispatch({ type: GET_MUSIC, payload: songs.data });
       } else {
         throw new Error("Error in fetching songs");
       }

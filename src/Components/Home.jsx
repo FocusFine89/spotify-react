@@ -1,10 +1,11 @@
 import { Card, Col, Row } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import StaticElement from "./StaticElement";
 
 const Main = () => {
-  const songs = useSelector((state) => state.songList.content.data);
-  // const dispatch = useDispatch();
+  const songs = useSelector((state) => state.songList.content);
+  const dispatch = useDispatch();
 
   return (
     <Col xs={12} md={9} className=" offset-md-3 mainPage">
@@ -18,34 +19,18 @@ const Main = () => {
         </Col>
       </Row>
       <Row className="  text-light">
-        <h2>Songs</h2>
-        {songs &&
-          songs.splice(1, 8).map((song) => {
-            return (
-              <Col xs={12} md={4} lg={3} className="mb-3 " key={song.id}>
-                <Card className="bg-transparent  text-light border-0">
-                  <Card.Img variant="top" src={song.album.cover_big} />
-                  <Card.Body>
-                    <Card.Title>{song.title}</Card.Title>
-                    <Card.Text>Artist: {song.artist.name}</Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
-            );
-          })}
+        <h2>Rock Classics</h2>
+        <StaticElement name="Queen" />
       </Row>
       <Row>
         <Col sm={10}>
           <div id="pop">
-            <h2>Artist</h2>
-            {songs && (
-              <Card className="bg-transparent text-light border-0 mb-3">
-                <Card.Img variant="top" src={songs[0].artist.picture_big} />
-                <Card.Body>
-                  <Card.Title>{songs[0].artist.name}</Card.Title>
-                </Card.Body>
-              </Card>
-            )}
+            <h2>Pop Culture</h2>
+          </div>
+        </Col>
+        <Col sm={10}>
+          <div id="hiphop">
+            <h2>#HipHop</h2>
           </div>
         </Col>
       </Row>

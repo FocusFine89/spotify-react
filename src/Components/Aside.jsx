@@ -64,12 +64,12 @@ const Aside = () => {
                         }}
                       />
                       <div className="input-group-append">
-                        <Button
+                        <Link
                           className="btn btn-dark btn-outline-secondary btn-sm h-100"
-                          onClick={() => dispatch(getMusicAction(inputValue))}
+                          to={`/${inputValue}`}
                         >
                           GO
-                        </Button>
+                        </Link>
                       </div>
                     </div>
                   </li>
