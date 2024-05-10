@@ -4,6 +4,7 @@ import selectedSongReducer from "../reducers/selectedSongReducer";
 
 const rootReducer = combineReducers({
   songList: songReducer,
+  selected: selectedSongReducer,
 });
 
 const store = configureStore({

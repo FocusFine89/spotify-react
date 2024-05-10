@@ -1,8 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
 import { Card, Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import { getMusicAction } from "../redux/actions";
+import { getMusicAction, selectedSongAction } from "../redux/actions";
 
 const Artist = () => {
   const songs = useSelector((state) => state.songList.content);
@@ -11,7 +12,11 @@ const Artist = () => {
 
   useEffect(() => {
     dispatch(getMusicAction(params.artist));
-  }, []);
+  }, [params.artist]);
+
+  //   useEffect(() => {
+  //     dispatch(getMusicAction(params.artist));
+  //   }, [params.artist]);
 
   return (
     <Col xs={12} md={9} className=" offset-md-3 mainPage">
@@ -30,7 +35,12 @@ const Artist = () => {
           songs.slice(1, 8).map((song) => {
             return (
               <Col xs={12} md={4} lg={3} className="mb-3 " key={song.id}>
-                <Card className="bg-transparent  text-light border-0">
+                <Card
+                  className="bg-transparent  text-light border-0"
+                  onClick={() => {
+                    dispatch({ type: "SELECTED_SONG", payload: song });
+                  }}
+                >
                   <Card.Img variant="top" src={song.album.cover_big} />
                   <Card.Body>
                     <Card.Title>{song.title}</Card.Title>

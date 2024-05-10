@@ -1,12 +1,9 @@
-import { Card, Col, Row } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
+import { Col, Row } from "react-bootstrap";
+
 import { Link } from "react-router-dom";
 import StaticElement from "./StaticElement";
 
 const Main = () => {
-  const songs = useSelector((state) => state.songList.content);
-  const dispatch = useDispatch();
-
   return (
     <Col xs={12} md={9} className=" offset-md-3 mainPage">
       <Row>
@@ -19,18 +16,24 @@ const Main = () => {
         </Col>
       </Row>
       <Row className="  text-light">
-        <h2>Rock Classics</h2>
-        <StaticElement name="Queen" />
+        <Col>
+          <div id="rock">
+            <h2>Rock Classics</h2>
+            <StaticElement name="Queen" />
+          </div>
+        </Col>
       </Row>
       <Row>
         <Col sm={10}>
           <div id="pop">
             <h2>Pop Culture</h2>
+            <StaticElement name="Katy Perry" />
           </div>
         </Col>
-        <Col sm={10}>
+        <Col sm={10} className="mb-5">
           <div id="hiphop">
             <h2>#HipHop</h2>
+            <StaticElement name="Eminem" />
           </div>
         </Col>
       </Row>

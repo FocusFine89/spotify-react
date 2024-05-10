@@ -1,13 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Button, Col, Container, Nav } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getMusicAction } from "../redux/actions";
 
 const Aside = () => {
   const [inputValue, setInputValue] = useState("");
   //   const songs = useSelector((state) => state.songList.content.data);
-  const dispatch = useDispatch();
+
   //   useEffect(() => {
   //     console.log(songs);
   //   }, [songs]);
